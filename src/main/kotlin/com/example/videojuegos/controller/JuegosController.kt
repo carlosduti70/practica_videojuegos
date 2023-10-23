@@ -42,6 +42,12 @@ class JuegosController {
         return ResponseEntity(juegosService.updateName(juegos), HttpStatus.OK)
     }
 
+    @GetMapping("/{id}")
+    fun listById (@PathVariable("id") id: Long): ResponseEntity<*>{
+        return ResponseEntity(juegosService.listById (id), HttpStatus.OK)
+
+    }
+
     @DeleteMapping("/delete/{id}")
     fun delete (@PathVariable("id") id: Long):Boolean?{
         return juegosService.delete(id)

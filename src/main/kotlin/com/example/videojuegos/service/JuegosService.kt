@@ -53,6 +53,10 @@ class juegosService {
         }
     }
 
+    fun listById (id:Long?):Juegos?{
+        return juegosRepository.findById(id)
+    }
+
     fun delete (id: Long?):Boolean?{
         try{
             val response = juegosRepository.findById(id)
