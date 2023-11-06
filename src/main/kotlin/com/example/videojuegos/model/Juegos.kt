@@ -20,5 +20,4 @@ class Juegos {
     var anoLanzamiento: Int? = null
     @Column(name= "puntuacion_media")
     var puntuacionMedia: Float? = null
-
 }
