@@ -1,10 +1,9 @@
 package com.example.videojuegos.model
 
-import jakarta.persistence.Column
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
 
+@Entity
+@Table(name = "jugadores")
 class Jugadores {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

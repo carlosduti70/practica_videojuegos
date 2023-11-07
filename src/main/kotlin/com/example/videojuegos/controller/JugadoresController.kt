@@ -1,5 +1,6 @@
 package com.example.videojuegos.controller
 
+import com.example.videojuegos.model.Juegos
 import com.example.videojuegos.model.Jugadores
 import com.example.videojuegos.service.JugadoresService
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,12 +26,12 @@ class JugadoresController {
     }
 
     @PutMapping
-    fun update (@RequestBody jugadores: Jugadores):ResponseEntity<Jugadores>{
+    fun update (@RequestBody jugadores: Jugadores): ResponseEntity<Jugadores> {
         return ResponseEntity(jugadoresService.update(jugadores), HttpStatus.OK)
     }
 
     @PatchMapping
-    fun updateName (@RequestBody jugadores: Jugadores):ResponseEntity<Jugadores>{
+    fun updateName (@RequestBody jugadores: Jugadores): ResponseEntity<Jugadores> {
         return ResponseEntity(jugadoresService.updateName (jugadores), HttpStatus.OK)
     }
 

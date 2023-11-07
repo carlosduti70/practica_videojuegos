@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "e97ae51d-9cb5-43e8-bc51-e22f83516245",
+		"name": "proyecto_juegos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30653733"
+	},
+	"item": [
+		{
+			"name": "listar_juego",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/juegos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"juegos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "byid_juego",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/juegos/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"juegos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar_juego",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\":null,\r\n    \"plataforma\":\"play station\",\r\n    \"anoLanzamiento\": 2005,\r\n    \"puntuacionMedia\":89\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/juegos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"juegos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cambiar_juego",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"titulo\": \"minecraft\",\r\n    \"plataforma\": \"PC\",\r\n    \"anoLanzamiento\": 2005,\r\n    \"puntuacionMedia\": 89.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/juegos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"juegos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch_juego",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 7,\r\n    \"titulo\": \"XXX\",\r\n    \"plataforma\": \"PC\",\r\n    \"anoLanzamiento\": 2005,\r\n    \"puntuacionMedia\": 89.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/juegos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"juegos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_juego",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"titulo\": \"minecraft\",\r\n    \"plataforma\": \"PS vita\",\r\n    \"anoLanzamiento\": 2009,\r\n    \"puntuacionMedia\": 89.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/juegos/delete/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"juegos",
+						"delete",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar_juegadores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/jugadores",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jugadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "byId_juegadores Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/jugadores",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jugadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar_jugadores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Luis\",\r\n    \"genero\":\"Masculino\",\r\n    \"edad\": 20,\r\n    \"juegosId\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/jugadores",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jugadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch_jugadores",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Juan\",\r\n    \"genero\": \"Masculino\",\r\n    \"edad\": 20,\r\n    \"juegosId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/jugadores",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jugadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_jugadores",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"titulo\": \"minecraft\",\r\n    \"plataforma\": \"PS vita\",\r\n    \"anoLanzamiento\": 2009,\r\n    \"puntuacionMedia\": 89.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/jugadores/delete/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jugadores",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

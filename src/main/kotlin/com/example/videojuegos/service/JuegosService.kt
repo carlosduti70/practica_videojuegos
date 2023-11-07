@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException
 class juegosService {
     @Autowired
     lateinit var juegosRepository: JuegosRepository
-//list
+    //list
     fun list ():List<Juegos>{
         return juegosRepository.findAll()
     }
@@ -20,13 +20,23 @@ class juegosService {
 
     fun save(juegos:Juegos): Juegos {
         try{
+            juegos.titulo?.takeIf {it.trim().isNotEmpty()}
+                    ?:throw Exception("Título no debe ser vacio")
+            juegos.plataforma?.takeIf {it.trim().isNotEmpty()}
+                    ?:throw Exception("Plataforma no debe ser vacio")
             return juegosRepository.save(juegos)
+
+
         }
         catch (ex:Exception){
-            throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
+            throw ResponseStatusException(HttpStatus.BAD_REQUEST,ex.message)
         }
+
+
     }
-//put
+
+
+    //put
     fun update(juegos: Juegos): Juegos{
         try {
             juegosRepository.findById(juegos.id)

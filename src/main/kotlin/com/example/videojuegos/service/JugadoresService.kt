@@ -23,35 +23,38 @@ class JugadoresService {
 //post
     fun save(jugadores: Jugadores): Jugadores {
         try{
-            juegosRepository.findById(jugadores.juegosId)
-                    ?: throw Exception("Id del cliente no encontrada")
+            jugadores.nombre?.takeIf {it.trim().isNotEmpty()}
+                    ?:throw Exception("Nombre no debe ser vacio")
+            jugadores.genero?.takeIf {it.trim().isNotEmpty()}
+                    ?:throw Exception("genero no debe ser vacio")
+            return jugadoresRepository.save(jugadores)
+
+        }
+        catch (ex:Exception){
+            throw ResponseStatusException(HttpStatus.BAD_REQUEST,ex.message)
+        }
+    }
+    //put
+    fun update(jugadores: Jugadores): Jugadores {
+        try {
+            jugadoresRepository.findById(jugadores.id)
+                    ?: throw Exception("ID no existe")
+
             return jugadoresRepository.save(jugadores)
         }
         catch (ex:Exception){
             throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
         }
     }
-    //put
-    fun update(juegos: Juegos): Juegos {
-        try {
-            juegosRepository.findById(juegos.id)
-                    ?: throw Exception("ID no existe")
 
-            return juegosRepository.save(juegos)
-        }
-        catch (ex:Exception){
-            throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
-        }
-    }
-
-    fun updateName(juegos: Juegos): Juegos {
+    fun updateName(jugadores: Jugadores): Jugadores {
         try{
-            val response = juegosRepository.findById(juegos.id)
+            val response = jugadoresRepository.findById(jugadores.id)
                     ?: throw Exception("ID no existe")
             response.apply {
-                plataforma=juegos.plataforma //un atributo del modelo
+                nombre=jugadores.nombre //un atributo del modelo
             }
-            return juegosRepository.save(response)
+            return jugadoresRepository.save(response)
         }
         catch (ex:Exception){
             throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
