@@ -27,7 +27,11 @@ class JugadoresService {
                     ?:throw Exception("Nombre no debe ser vacio")
             jugadores.genero?.takeIf {it.trim().isNotEmpty()}
                     ?:throw Exception("genero no debe ser vacio")
+            juegosRepository.findById(jugadores.juegosId)
+                    ?:throw Exception("id no existe")
             return jugadoresRepository.save(jugadores)
+
+
 
         }
         catch (ex:Exception){

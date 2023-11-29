@@ -2,6 +2,7 @@ package com.example.videojuegos.controller
 
 import com.example.videojuegos.model.Juegos
 import com.example.videojuegos.service.juegosService
+import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -27,12 +28,12 @@ class JuegosController {
 
 
     @GetMapping
-    fun list ():List <Juegos>{
+    fun list ( ):List <Juegos>{
         return juegosService.list()
     }
 
     @PostMapping
-    fun save (@RequestBody juegos:Juegos):ResponseEntity<Juegos>{
+    fun save (@RequestBody @Valid juegos:Juegos):ResponseEntity<Juegos>{
         return ResponseEntity(juegosService.save(juegos), HttpStatus.OK)
     }
 

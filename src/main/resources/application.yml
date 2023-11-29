@@ -1,3 +1,8 @@
+cloudinary:
+  cloud-name: videojuegos
+  api-key: 888578476377826
+  api-secret: MSbL1Occspl7ViBjsuIomX9veeU
+
 server:
   port: 8081
   error:

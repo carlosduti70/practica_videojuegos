@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS juegos (
     id SERIAL PRIMARY KEY,
+    image VARCHAR(255) NOT NULL,
     titulo VARCHAR(255) NOT NULL,
     plataforma VARCHAR(50) NOT NULL,
     ano_lanzamiento INT,

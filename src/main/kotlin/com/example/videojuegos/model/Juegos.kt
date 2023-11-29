@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
+import jakarta.validation.constraints.NotBlank
 
 @Entity
 @Table(name = "juegos")
@@ -14,6 +15,7 @@ class Juegos {
     @Id
     @Column(updatable = false)
     var id: Long? = null
+    var image: String?= null
     var titulo: String? = null
     var plataforma: String? = null
     @Column(name="ano_lanzamiento")
